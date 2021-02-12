@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-html, body{
+body, html{
     height: 100%;
 }
 .carousel{
@@ -14,46 +14,50 @@ html, body{
 }
 .carousel__slider{
     position: absolute;
-    display: flex;   
     top: 0;
     left: -100%;
+    display: flex;
+        
     width: 100%;
-    height: 100vh;
+    height: 100vh;   
 }
-.carousel__images{   
+.carousel__image{      
     width: 100%;
-    object-fit: contain;   
+    object-fit: cover;    
 }
-.carousel__controls i{
+.carousel__controls{
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
+    width: 100%;
     font-size: 5rem;
-    padding: 10px;
-    cursor: pointer;
-    color: #fff;
-    background: rgba(0,0,0,.8);
-    
 }
-.carousel__controls i:nth-child(2){
+.carousel__controls--previous, .carousel__controls--next{
+    position: absolute;
+    cursor: pointer;
+    background: rgba(0,0,0,.8);
+    padding: 10px;
+    color: #fff;
+}
+.carousel__controls--next{
     right: 0;
 }
 .carousel__indicators{
-    position: absolute;
-    bottom: 70px;
-    width: 100%;
+    position:absolute;
+    bottom: 10px;
     display: flex;
+    width: 100%;
     justify-content: center;
 }
-.carousel__indicator{    
-    background: #000;
+.carousel__indicator{
     height: 20px;
     width: 20px;
     border-radius: 50%;
+    background: #000;
     margin: 0 5px;
     cursor: pointer;
 }
 .carousel__indicator--red{
-    background: #bb6069;
-    transition: background .6s ease;
+    background: red;
+    transition: background .3s ease-in-out;
 }
